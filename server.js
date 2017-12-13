@@ -2,7 +2,10 @@ var express = require('express'),
 partials = require('express-partials'),
 app = express(),
 errorHandlers = require('./middleware/errorHandlers'),
-routes = require('./routes');
+routes = require('./routes'),
+env = require('./env'),
+config = require('./config/' + env.name)
+;
 
 app.set('view engine', 'ejs');
 app.set('view options', {defoultLayout:'layout'});
@@ -22,6 +25,8 @@ app.get('/commercialCleaning', routes.commercialCleaning);
 app.get('/curtainCleaning', routes.curtainCleaning);
 app.get('/houseCleaning', routes.houseCleaning);
 app.get('/residentialCleaning', routes.residentialCleaning);
+app.get('/services/:uname', routes.serviceDetail);
+app.get('/blog/:uname', routes.blogDetail);
 app.get('/order', routes.order);
 
 
@@ -31,5 +36,5 @@ app.get('/error', function(req, res, next){
 app.use(errorHandlers.error);
 app.use(errorHandlers.notFound);
 
-app.listen('3001')
-	console.log('server running port 3001');
+app.listen(config.port);
+	console.log('server running port '+ config.port);

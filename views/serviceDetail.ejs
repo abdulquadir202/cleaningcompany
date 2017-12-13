@@ -1,0 +1,91 @@
+<main class="page-main">
+    <div class="generic-parallax bg-parallax mt40" style='background-image: url(/images/slider/slide-2.jpg)'>
+    <div class="fullscreen-inner  bg-layer">
+        <div class="container">
+            <div class="row mb-10">
+                <div class="col-sm-12">
+                    <div class="text-center pb40">
+                        <h1 class="pt30">Services Detail</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+		<!-- Breadcrumbs Block -->
+		<div class="block breadcrumbs">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li>Service Detail</li>
+                </ul>
+            </div>
+        </div>
+		<!-- //Breadcrumbs Block -->
+	
+	
+
+
+
+	<div class="container" >
+    <div class="row well">
+    <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+     <div class="service-content"> 
+       <div class="image-box">
+         <img src="/images/content/service-img-2.jpg" alt"" />
+       </div>
+       <div class="lower-content">
+        <h3><%= item.name %></h3>
+        <div class="text-block">
+         <p class="text-justify"><%= item.description %></p>
+        </div>
+       </div>
+
+     </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 well">
+                     <h3>Booking Now</h3>
+                    <div class="contact-form default-form">
+                        <form id="booking-form" class="xyz">
+                            <div class="form-group">
+                                <div class="field-label">Name</div>
+                                <input type="text" name="name" id="name"  placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="field-label">Mobile</div>
+                                <input type="text" name="mobile" id="mobile"  placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="field-label">Email</div>
+                                <input type="email" name="email" id="email"  placeholder="">
+                            </div>
+
+                            <div class="form-group datepicker">
+                                <div class="field-label">Date</div>
+                                <input type="text" name="dueDate" id="dueDate"  placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="field-label">Address</div>
+                                <input type="text" name="address" id="address" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="field-label">Message</div>
+                                <textarea name="description" id="description" placeholder=""></textarea>
+                            </div>
+
+                            <button class="theme-btn btn-style-two" id= "bookService">Book Now</button>
+                            <input type="hidden" id= "serviceId" value="<%= item.id %>">
+                        </form>
+
+                    </div>
+                </div>
+    </div>
+	</div>
+
+</main>
